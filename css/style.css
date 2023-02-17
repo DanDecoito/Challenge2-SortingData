@@ -1,0 +1,42 @@
+body {
+    background-color: rgb(81, 78, 78);
+}
+.titleBar {
+    background-color: rgb(86, 86, 148);
+    color: white;
+    text-align: start;
+}
+.titleBarText{
+    font-size: 15px;
+}
+.footerBar {
+    background-color: rgb(86, 86, 148);
+    height: 40px;
+    display: flex;
+    justify-content: center;
+}
+.createdInfoText {
+    color: white;
+    font-size: 10px;
+    overflow: hidden;
+}
+.createdInfoText:hover {
+    overflow: visible; 
+  }
+.createdDivs {
+
+}
+.CreatedRows {
+    background-color: rgb(126, 90, 126);
+}
+.header {
+    font-size: 60px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+.dataSelectContainer{
+    margin-bottom: 20px;
+    background-color: rgb(86, 86, 148);
+    
+}
