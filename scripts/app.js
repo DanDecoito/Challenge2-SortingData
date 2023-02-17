@@ -10,7 +10,7 @@ let sortDisplay = document.getElementById('sortDisplay');
 let nameData;
 
 
-
+prevButton.style.display = 'none';
 
 let pageNum = 0;
 let searchNum;
@@ -97,21 +97,55 @@ function CreateElements(start, end, array){
 numDiplay.addEventListener('click', () => {
     CreateElements(0, numDiplay.value, arr)
     pageNum = 0;
+    nextButton.style.display = 'block';
+    prevButton.style.display = 'none'
 })
 
 
 nextButton.addEventListener('click', () => {
     pageNum++;
-    
+    prevButton.style.display = 'block';
     let num = parseInt(numDiplay.value);
     searchNum = num * pageNum
     searchNum2 = searchNum + num
 
+
+    console.log(pageNum)
+    if(pageNum === 9)
+    {
+        nextButton.style.display = 'none';
+    }
+    if(pageNum === 3 && numDiplay.value === 20 )
+    {
+        nextButton.style.display = 'none';
+    }
+    if(pageNum === 3 && numDiplay.value === 30 )
+    {
+        nextButton.style.display = 'none';
+    }
+    if(pageNum === 3 && numDiplay.value === 30 )
+    {
+        nextButton.style.display = 'none';
+    }
+    if(pageNum === 2 && numDiplay.value === 40 )
+    {
+        nextButton.style.display = 'none';
+    }
+    if(numDiplay.value === '50' )
+    {
+        nextButton.style.display = 'none';
+    }
+
+
+
+
+
     if (searchNum2 > data.People.length) 
     {   
+        nextButton.style.display = 'none';
         let newNum = pageNum * numDiplay.value
         searchNum2 = data.People.length
-
+        
         CreateElements(newNum, searchNum2, arr)
         console.log(`${pageNum}: ${searchNum}, ${searchNum2}`)
         console.log(newNum)
@@ -131,7 +165,11 @@ prevButton.addEventListener('click', () => {
     pageNum--;
     let num = parseInt(numDiplay.value);
     let num2 = (num + num);
-
+    nextButton.style.display = 'block';
+    if(pageNum === 0)
+    {
+        prevButton.style.display = 'none';
+    }
         CreateElements(0, numDiplay.value, arr)
    
 
@@ -144,6 +182,7 @@ prevButton.addEventListener('click', () => {
     {
         CreateElements(searchNum, data.People.length, arr)
         console.log(`${pageNum}: ${searchNum}, ${searchNum2}`)
+        nextButton.style.display = 'none';
     }
     else
     {
